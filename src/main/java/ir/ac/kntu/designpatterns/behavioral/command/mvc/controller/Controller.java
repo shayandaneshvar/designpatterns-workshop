@@ -8,15 +8,15 @@ import ir.ac.kntu.designpatterns.behavioral.command.mvc.view.View;
 public class Controller {
     private Text text = null;
 
-    public Controller(View view) {
+    public Controller(View viewImpl) {
         text = new Text("");
-        text.addObserver(view);
+        text.addObserver(viewImpl);
         Command calculateCommand = (o) -> {
             String string = (String) o;
             text.clear().append(string);
             text.updateAllObservers();
         };
-        view.setCalculateCommand(calculateCommand);
+        viewImpl.setCalculateCommand(calculateCommand);
     }
 
 }

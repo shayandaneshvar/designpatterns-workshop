@@ -1,16 +1,13 @@
-package ir.ac.kntu.designpatterns.behavioral.command.mvc;
+package ir.ac.kntu.designpatterns.behavioral.memento;
 
 import ir.ac.kntu.designpatterns.behavioral.command.mvc.controller.Controller;
-import ir.ac.kntu.designpatterns.behavioral.command.mvc.view.DefaultView;
+import ir.ac.kntu.designpatterns.behavioral.command.mvc.view.View;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
-/**
- * @author shayan daneshvar
- */
 public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -19,8 +16,8 @@ public class Main extends Application {
         primaryStage.setScene(scene);
         primaryStage.setTitle("Text Info Extractor");
         primaryStage.show();
-        DefaultView defaultView = new DefaultView(primaryStage,scene,root);
-        new Controller(defaultView);
+        View viewImpl = new ViewWithMemory(primaryStage,scene,root);
+        new Controller(viewImpl);
     }
 
     public static void main(String[] args) {
