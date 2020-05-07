@@ -8,6 +8,9 @@ import javafx.scene.Scene;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
+/**
+ * @author shayan daneshvar
+ */
 public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
